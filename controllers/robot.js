@@ -2,5 +2,5 @@
 //const fs = require('fs');
 
 exports.getStatus = (req,res,next) => {
-    res.status(200).json({robot: { statut : 'ONLINE', vitesse:75,batterie:50} });
+    res.status(200).json({robot: { status : 'ONLINE', vitesse:75,batterie:50} });
 };
