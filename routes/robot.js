@@ -4,6 +4,8 @@ const router = express.Router();
 
 const robotCtrl = require('../controllers/robot');
 
+
 router.get('/', robotCtrl.getStatus);
+router.post('/cmd', robotCtrl.handleCmd);
 
 module.exports = router;

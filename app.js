@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 
 const robotRoutes = require('./routes/robot.js')
+
 //const userRoutes = require('./routes/user.js');
 
 /*mongoose.connect('mongodb+srv://pablo:aramir21@cluster0.zaoatsj.mongodb.net/?retryWrites=true&w=majority',
@@ -25,6 +26,5 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use('/api/robot',robotRoutes)
-//app.use('/api/auth', userRoutes);
 //app.use('/images', express.static(path.join(__dirname, 'images')));
 module.exports = app;
