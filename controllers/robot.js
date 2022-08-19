@@ -2,11 +2,11 @@
 //const fs = require('fs');
 
 const robot = {
-    status : 'ONLINE',
+    status : 'Online',
     vitesse:50,
-    batterie:49,
-    camera:'OFF',
-    direction:'STOP'
+    batterie:90,
+    camera:'Offline',
+    direction:'DOWN'
 }
 exports.getStatus = (req,res,next) => {
     res.status(200).json({robot: { status : robot.status, vitesse:robot.vitesse,batterie:robot.batterie,camera:robot.camera,direction:robot.direction} });
