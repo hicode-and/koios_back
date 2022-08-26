@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
-
 const robotRoutes = require('./routes/robot.js')
 
 //const userRoutes = require('./routes/user.js');
@@ -16,6 +15,7 @@ const robotRoutes = require('./routes/robot.js')
 
 
 
+  const videoStream = require('./videoStream');
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -26,5 +26,19 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use('/api/robot',robotRoutes)
+
+
+
+
+
+app.use(express.static('public'));
+
+videoStream.acceptConnections(app, {
+  width: 1280,
+  height: 720,
+  fps: 16,
+  encoding: 'JPEG',
+  quality: 7 //lower is faster
+}, '/stream.mjpg', true);
 //app.use('/images', express.static(path.join(__dirname, 'images')));
 module.exports = app;
