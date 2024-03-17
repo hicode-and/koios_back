@@ -1,3 +1,4 @@
+import * as path from 'path';
 //const Robot = require('../models/Robot');
 //const fs = require('fs');
 //var Gpio = require('onoff').Gpio; 
