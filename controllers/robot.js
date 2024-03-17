@@ -152,5 +152,5 @@ exports.handleCmd = (req,res,next) => {
 };
 
 exports.getPicture = (req,res,next) => {
-    res.sendFile(path.join(__dirname + '../ressources/r2d2.jpg'));
+    res.sendFile(path.join(__dirname + '/../ressources/r2d2.jpg'));
 };
