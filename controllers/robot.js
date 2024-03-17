@@ -152,9 +152,5 @@ exports.handleCmd = (req,res,next) => {
 };
 
 exports.getPicture = (req,res,next) => {
-    if (Math.random() > 0.5) {
-        res.sendFile(path.join(__dirname + '/../ressources/r2d2.jpg'));
-    } else {
-        res.sendFile(path.join(__dirname + '/../ressources/r3d3.jpg'));
-    }
+    res.sendFile(path.join(__dirname + '/../ressources/r2d2.jpg'));
 };
