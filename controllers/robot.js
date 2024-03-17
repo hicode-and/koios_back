@@ -149,3 +149,7 @@ exports.handleCmd = (req,res,next) => {
     
 
 };
+
+exports.getPicture = (req,res,next) => {
+    res.sendFile('./ressources/r2d2.jpg');
+};

@@ -7,5 +7,7 @@ const robotCtrl = require('../controllers/robot');
 
 router.get('/', robotCtrl.getStatus);
 router.post('/cmd', robotCtrl.handleCmd);
+router.get('/picture', robotCtrl.getPicture);
+
 
 module.exports = router;
