@@ -51,8 +51,8 @@ exports.handleCmd = (req,res,next) => {
         {
             robot.vitesse = Math.round(req.body.cmd)
             robot.intern_vitesse =  Math.round(robot.vitesse * 2.55)
-            robot.intern_vitesse_reduced = Math.round(robot.intern_vitesse*0.70)
-            robot.intern_vitesse_reduced_down = Math.round(robot.intern_vitesse*0.95)
+            robot.intern_vitesse_reduced = Math.round(robot.intern_vitesse*0.72)
+            robot.intern_vitesse_reduced_down = Math.round(robot.intern_vitesse*0.72)
             console.log(robot.intern_vitesse)
 
             if(robot.direction == "LEFT")
@@ -85,10 +85,10 @@ exports.handleCmd = (req,res,next) => {
             {
                 console.log("LEFT")
 
-                en1.digitalWrite(0);
+                en1.digitalWrite(1);
                 en2.digitalWrite(1);                
 
-                pwm1a.pwmWrite(0);
+                pwm1a.pwmWrite(robot.intern_vitesse);
                 pwm1b.pwmWrite(0);
 
                 pwm2a.pwmWrite(robot.intern_vitesse);
@@ -99,12 +99,12 @@ exports.handleCmd = (req,res,next) => {
                 console.log("RIGHT")
 
                 en1.digitalWrite(1);
-                en2.digitalWrite(0);                
+                en2.digitalWrite(1);                
 
                 pwm1a.pwmWrite(robot.intern_vitesse);
                 pwm1b.pwmWrite(robot.intern_vitesse);
 
-                pwm2a.pwmWrite(0);
+                pwm2a.pwmWrite(robot.intern_vitesse);
                 pwm2b.pwmWrite(0);
             }
             else if(req.body.cmd=="UP")
