@@ -126,10 +126,10 @@ exports.handleCmd = (req,res,next) => {
                 en1.digitalWrite(1);
                 en2.digitalWrite(1);
 
-                pwm1a.pwmWrite(robot.intern_vitesse_reduced_down)
+                pwm1a.pwmWrite(robot.intern_vitesse)
                 pwm1b.pwmWrite(0);
 
-                pwm2a.pwmWrite(robot.intern_vitesse)
+                pwm2a.pwmWrite(robot.intern_vitesse_reduced_down)
                 pwm2b.pwmWrite(0);
             }
             else
