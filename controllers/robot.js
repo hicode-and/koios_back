@@ -104,8 +104,8 @@ exports.handleCmd = (req,res,next) => {
                 pwm1a.pwmWrite(robot.intern_vitesse);
                 pwm1b.pwmWrite(robot.intern_vitesse);
 
-                pwm2a.pwmWrite(robot.intern_vitesse);
-                pwm2b.pwmWrite(0);
+                pwm2a.pwmWrite(0);
+                pwm2b.pwmWrite(robot.intern_vitesse);
             }
             else if(req.body.cmd=="UP")
             {
