@@ -51,7 +51,7 @@ exports.handleCmd = (req,res,next) => {
         {
             robot.vitesse = Math.round(req.body.cmd)
             robot.intern_vitesse =  Math.round(robot.vitesse * 2.55)
-            robot.intern_vitesse_reduced = Math.round(robot.intern_vitesse*0.88)
+            robot.intern_vitesse_reduced = Math.round(robot.intern_vitesse*0.70)
             robot.intern_vitesse_reduced_down = Math.round(robot.intern_vitesse*0.95)
             console.log(robot.intern_vitesse)
 
